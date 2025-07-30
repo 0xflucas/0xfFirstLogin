@@ -1,3 +1,6 @@
 commands:
   - 'bc {player} entrou pela primeira vez no servidor!'
   - 'bc {player} é um novo jogador!'
+  - 'lp user {player} parent add terra3'
+messages:
+  - 'Olá {player}, aproveite sua estadia!'

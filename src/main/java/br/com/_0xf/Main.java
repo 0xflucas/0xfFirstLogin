@@ -1,17 +1,29 @@
 package br.com._0xf;
 
+import br.com._0xf.handlers.LoginHandler;
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.java.JavaPlugin;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+public class Main extends JavaPlugin {
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+    @Override
+    public void onEnable() {
+        this.saveDefaultConfig();
+
+        LoginHandler loginHandler = new LoginHandler(this);
+        Bukkit.getPluginManager().registerEvents(loginHandler, this);
+
+        msgs();
+    }
+
+    void msgs() {
+        Bukkit.getConsoleSender().sendMessage("");
+        Bukkit.getConsoleSender().sendMessage("");
+        Bukkit.getConsoleSender().sendMessage("§7==============================================================");
+        Bukkit.getConsoleSender().sendMessage("§d=>[0xfFirstLogin] §f" + this.getDescription().getName() + " " + this.getDescription().getVersion() + " plugin habilitado com sucesso!!!");
+        Bukkit.getConsoleSender().sendMessage("§7==============================================================");
+        Bukkit.getConsoleSender().sendMessage("");
     }
 }
