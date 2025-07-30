@@ -1,0 +1,3 @@
+commands:
+  - 'bc {player} entrou pela primeira vez no servidor!'
+  - 'bc {player} é um novo jogador!'

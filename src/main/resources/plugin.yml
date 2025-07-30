@@ -1,0 +1,5 @@
+name: 0xfFirstLogin
+main: br.com._0xf.Main
+version: 1.0-SNAPSHOT
+soft-depend: []
+author: 0xflucas
