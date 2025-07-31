@@ -27,15 +27,11 @@ public class LoginHandler implements Listener {
         if (!p.hasPlayedBefore()) {
             List<String> commands = config.getStringList("commands");
             for (String command : commands) {
-                if (command != null) {
-                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("{player}", p.getName()));
-                }
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("{player}", p.getName()));
             }
 
             for(String message : config.getStringList("messages")) {
-                if (message != null) {
-                    p.sendMessage(message.replace("{player}", p.getName()));
-                }
+                p.sendMessage(message.replace("{player}", p.getName()));
             }
         }
     }
